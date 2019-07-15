@@ -1,0 +1,26 @@
+Q) What is array decay in C++?
+A) Loss of type and size of array when we pass it 
+   as pointer or value
+
+Q) How to avoid it?
+    Pass by reference.
+    Pass size as another argument.
+
+====
+Q) Opaque pointer?
+A) Sometimes we provide minimal declaration of a structure 
+    just to aid the compiler in compiling it. We call such
+    pointers as opaque as we cannot see the members of the 
+    structure
+
+===
+Q) Reference
+A) When we declare a variable as reference, it becomes an 
+    alternate name for existing variable.
+
+Q) Applications of reference
+A)  Modify the passed paramenters in a function
+    Avoid copy of large structures
+    In for each loops to modify all objects
+    In for each loops to avoid copy of all objects
+    
