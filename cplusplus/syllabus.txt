@@ -15,6 +15,8 @@
     Static member functions.
 
     Size of empty class
+
+    auto ptr, shared ptr, unique ptr
     
 2) C++ Constructor & Destructor
     Constructors
@@ -50,3 +52,4 @@
     Object Slicing
 
 7) STL
+8) Design Patterns
