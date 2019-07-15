@@ -1,6 +1,6 @@
 SRCDIR := src
 OBJDIR := obj
-TARGETS: refEx objSl arrD smartPtr autoptr unique_ptr
+TARGETS: refEx objSl arrD smartPtr autoptr unique_ptr shared_ptr weak_ptr
 TARGETS_LOC: $(addprefix $(OBJDIR)/,$TARGETS)
 VPATH = $(SRCDIR)
 
@@ -43,7 +43,19 @@ unique_ptr: src/unique_ptrEx.cpp
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
 	@echo [Running Unique Pointer Example] 
-	@obj/unique_ptr
+	@obj/$@
+
+shared_ptr: src/shared_ptrEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running Shared Pointer Example] 
+	@obj/$@
+
+weak_ptr: src/weak_ptrEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running Weak Pointer Example] 
+	@obj/$@
 
 clean:
 	rm -rf obj

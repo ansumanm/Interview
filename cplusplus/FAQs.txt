@@ -44,4 +44,22 @@ A)  Introduced in C++11 as a replacement for auto_ptr
     When it is destroyed, the resource is claimed.
     Any attempt to copy a unique_ptr will result in a compilation
     error.
+    Use unique pointer when you want to have exclusive access to a 
+    resource.
     
+Q) shared_ptr
+A)  Its a reference counting ownership model. It maintains a ref count
+    of all contained pointer in co-operation with all copies of the 
+    shared pointer. So the object is deleted when the reference count 
+    becomes zero.
+
+Q) weak_ptr
+A)  A weak_ptr is created as a copy of shared_ptr but it does not participate
+    in reference counting. It is used to break circular dependencies between
+    shared pointer instances.
+
+Q) cyclic dependency problem with shared pointer
+A)  Lets say there are two classes A and B, both have a shared pointer 
+    which are pointing at each other. In such a case, the use_count will 
+    never be zero and they never get deleted. Solution is to make one of the 
+    two pointers as weak.
