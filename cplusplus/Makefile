@@ -1,6 +1,6 @@
 SRCDIR := src
 OBJDIR := obj
-TARGETS: refEx objSl arrD smartPtr autoptr unique_ptr shared_ptr weak_ptr
+TARGETS: refEx objSl arrD smartPtr autoptr unique_ptr shared_ptr weak_ptr copycon
 TARGETS_LOC: $(addprefix $(OBJDIR)/,$TARGETS)
 VPATH = $(SRCDIR)
 
@@ -55,6 +55,12 @@ weak_ptr: src/weak_ptrEx.cpp
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
 	@echo [Running Weak Pointer Example] 
+	@obj/$@
+
+copycon: src/copyConstructorEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running Copy Constructr Example] 
 	@obj/$@
 
 clean:
