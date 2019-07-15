@@ -1,0 +1,52 @@
+# C++ interview syllabus
+
+1) C++ basics
+    C++ const
+
+    Inheritance
+    Polymorphism
+    Encapsulation
+    Data Abstraction
+
+    Virtual Function
+    Function Overloading
+
+    Static data members 
+    Static member functions.
+
+    Size of empty class
+    
+2) C++ Constructor & Destructor
+    Constructors
+        Virtual Constructors
+    Copy Constructors
+        Virtual Copy Constructors
+
+    Copy Constructor vs Assignment Operator
+
+    Initialization of Data Members
+    explicit keyword
+    Initializer List
+    Default Constructor
+    Private Constructor
+    static objects destruction
+
+3) Virtual Functions
+    Virtual Functions and runtime polymorphism
+    Default arguments and virtual functions
+    Virtual functions in derived classes
+    static virtual functions
+    Virtual Constructor
+    Virtual Destructor
+    Virtual Copy Constructor
+    RTTI (Runtime type identification)
+    private virtual functions
+    Pure virtual functions and abstract classes
+
+4) Exception handling
+5) Namespaces
+6) Inheritance
+    Multiple inheritance
+    Object Slicing
+
+7) STL
