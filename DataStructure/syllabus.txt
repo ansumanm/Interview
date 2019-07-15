@@ -1,0 +1,23 @@
+Linked Lists
+    Singly Linked List
+    Circular Linked List
+    Doubly Linked List
+
+Stack
+    Various problems that can be solved using Stack
+
+Queues
+    Various problems
+
+Binary Tree
+    Various tree traversal
+    Various problems
+
+BST
+    Node deletion
+
+Heap
+    Various problems using heap
+
+Hash
+Graph
