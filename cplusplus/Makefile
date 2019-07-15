@@ -1,6 +1,7 @@
 SRCDIR := src
 OBJDIR := obj
-TARGETS: refEx objSl arrD smartPtr autoptr unique_ptr shared_ptr weak_ptr copycon
+TARGETS: refEx objSl arrD smartPtr autoptr unique_ptr \
+   	shared_ptr weak_ptr copycon explicitEx initializerList
 TARGETS_LOC: $(addprefix $(OBJDIR)/,$TARGETS)
 VPATH = $(SRCDIR)
 
@@ -61,6 +62,18 @@ copycon: src/copyConstructorEx.cpp
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
 	@echo [Running Copy Constructr Example] 
+	@obj/$@
+
+explicitEx: src/explicitEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running Explicit Keyword Example] 
+	@obj/$@
+
+initializerList: src/initializerEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running $@ Example] 
 	@obj/$@
 
 clean:

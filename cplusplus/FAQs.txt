@@ -63,3 +63,22 @@ A)  Lets say there are two classes A and B, both have a shared pointer
     which are pointing at each other. In such a case, the use_count will 
     never be zero and they never get deleted. Solution is to make one of the 
     two pointers as weak.
+
+=====
+Q) Initialization of data members
+A)  class variables are initialized in the same order as they appear in the 
+    class declaration
+
+===
+Q) Explicit keyword
+A) Used to stop implicit conversions by the compiler.
+
+===
+Q) When to use Initializer List to initialize data in C++
+A)  To initialize non-static const data members.
+    For initialization of reference members.
+    For initialization of member objects which do not have default constructor.
+    For initializtion of base class members.
+    When the constructor parameter name is the same as data member.
+    For better performance. With Initializer list: Copy constructor + Destructor
+        Without initializer list: Constructor + Assignment operator + Destructor
