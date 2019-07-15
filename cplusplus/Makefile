@@ -1,20 +1,10 @@
 SRCDIR := src
 OBJDIR := obj
-
+TARGETS: refEx objSl arrD smartPtr autoptr unique_ptr
+TARGETS_LOC: $(addprefix $(OBJDIR)/,$TARGETS)
 VPATH = $(SRCDIR)
 
-all: refEx objSl arrD smartPtr autoptr | obj
-	@echo [Running Reference Example]
-	@obj/refEx
-	@echo [Running Object Slicing Example]
-	@obj/objSl
-	@echo [Running Array Example] 
-	@obj/arrD
-	@echo [Running Smart Pointer Example] 
-	@obj/smartPtr
-	@echo [Running Auto Pointer Example] 
-	@obj/autoptr
-
+all: $(TARGET_LOC) | $(OBJDIR)
 obj:
 	@echo [Creating obj]
 	@mkdir obj
@@ -22,22 +12,38 @@ obj:
 refEx: src/referenceEx.cpp | obj
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running Reference Example]
+	@obj/refEx
 
 objSl: src/objectSlicingEx.cpp | obj
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ ../$? -o $@
+	@echo [Running Object Slicing Example]
+	@obj/objSl
 
 arrD: src/arrayDecay.cpp | obj
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ ../$? -o $@
+	@echo [Running Array Example] 
+	@obj/arrD
 
 smartPtr: src/smartPtrEx.cpp | obj
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ ../$? -o $@
+	@echo [Running Smart Pointer Example] 
+	@obj/smartPtr
 
 autoptr: src/autoptrEx.cpp | obj
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ ../$? -o $@
+	@echo [Running Auto Pointer Example] 
+	@obj/autoptr
+
+unique_ptr: src/unique_ptrEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running Unique Pointer Example] 
+	@obj/unique_ptr
 
 clean:
 	rm -rf obj
