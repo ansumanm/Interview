@@ -82,3 +82,15 @@ A)  To initialize non-static const data members.
     When the constructor parameter name is the same as data member.
     For better performance. With Initializer list: Copy constructor + Destructor
         Without initializer list: Constructor + Assignment operator + Destructor
+
+Q) When to use private destructor
+A)  When we want to control the destruction of objects. We can write a friend function
+        to destroy the object of such a class.
+
+=== 
+Q) virtual constructor
+A)  virtual constructors are not allowed. Factory pattern is used to polymorph derived
+        class creation.
+
+Q) virtual copy constructor
+A)  See prototype pattern

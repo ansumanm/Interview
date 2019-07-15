@@ -1,7 +1,8 @@
 SRCDIR := src
 OBJDIR := obj
 TARGETS: refEx objSl arrD smartPtr autoptr unique_ptr \
-   	shared_ptr weak_ptr copycon explicitEx initializerList
+   	shared_ptr weak_ptr copycon explicitEx initializerList \
+	privateDes factory prototype
 TARGETS_LOC: $(addprefix $(OBJDIR)/,$TARGETS)
 VPATH = $(SRCDIR)
 
@@ -71,6 +72,24 @@ explicitEx: src/explicitEx.cpp
 	@obj/$@
 
 initializerList: src/initializerEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running $@ Example] 
+	@obj/$@
+
+privateDes: src/privateDesEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running $@ Example] 
+	@obj/$@
+
+factory: src/factoryEx.cpp
+	@echo [Building $@]
+	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
+	@echo [Running $@ Example] 
+	@obj/$@
+
+prototype: src/prototypeEx.cpp
 	@echo [Building $@]
 	@cd $(OBJDIR); g++ -std=c++11 ../$? -o $@
 	@echo [Running $@ Example] 
