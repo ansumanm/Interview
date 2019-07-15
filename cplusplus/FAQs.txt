@@ -31,4 +31,7 @@ A)  Smart pointer is a wrapper class over a pointer
 
 ===
 Q) auto_ptr/unique_ptr
-A) 
+A)  Based on exclusive ownership model. Two pointers cant
+    point to the same resource. Copying or assigning pointers
+    changes ownership. Source pointer has given ownership to 
+    destination pointer. Source pointer would point to NULL.
