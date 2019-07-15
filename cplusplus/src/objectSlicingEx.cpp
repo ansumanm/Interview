@@ -21,9 +21,14 @@ void describe(Pet p) { // Slices the derived class object
     cout<<p.getDescription()<<endl; 
 } 
 
+void describe_2(const Pet &p) { // Doesn't slice the derived class object. 
+        cout<<p.getDescription()<<endl; 
+} 
+  
 int main() { 
     Dog d; 
     describe(d); 
+    describe_2(d); 
     return 0; 
 } 
 

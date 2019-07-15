@@ -24,3 +24,11 @@ A)  Modify the passed paramenters in a function
     In for each loops to modify all objects
     In for each loops to avoid copy of all objects
     
+===
+Q) Smart Pointer
+A)  Smart pointer is a wrapper class over a pointer
+    with operators like * and -> overloaded.
+
+===
+Q) auto_ptr/unique_ptr
+A) 
