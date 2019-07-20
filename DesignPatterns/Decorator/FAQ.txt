@@ -1,0 +1,10 @@
+Q> When to use decorator
+A> Want to augment an object with additional functionality.
+
+Q> Decorator implementation approaches
+A> Two options:
+    o Aggregate the decorator
+    o Inherit
+ 
+Q> Dynamic Decorator drawback
+A> The decorated object loses the functions of the  class
