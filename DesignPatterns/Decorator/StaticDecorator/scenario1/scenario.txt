@@ -1,0 +1,5 @@
+Have a shape
+Then enhance the shape to add color
+Then enhance it to add transparency.
+
+Implement using inheritance
