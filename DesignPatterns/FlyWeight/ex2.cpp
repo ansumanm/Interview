@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string.h>
 
 using namespace std;
 
@@ -10,6 +11,7 @@ class FormattedText {
 	public:
 		FormattedText(const string &plain_text): plain_text(plain_text) {
 			caps = new bool[plain_text.length()];
+			memset(caps, 0, plain_text.length());
 		}
 
 		~FormattedText() {
