@@ -17,7 +17,8 @@ class mybimap {
 		map<Y, X> Y_to_X;
 
 		// Find X from Y
-		std::pair<X, bool> find(const Y& y) {
+		std::pair<X, bool>
+		find(const Y& y) {
 			typename map<Y, X>::iterator it = Y_to_X.find(y);
 
 			if (it == Y_to_X.end()) {
@@ -27,13 +28,15 @@ class mybimap {
 			}
 		}
 
-		void add(const std::pair<X, Y>& X_Y_pair) {
+		void
+		add(const std::pair<X, Y>& X_Y_pair) {
 			X_to_Y.insert(X_Y_pair);
 			Y_to_X.insert(std::make_pair(X_Y_pair.second, X_Y_pair.first));
 		}
 
 		// Find Y from X
-		std::pair<Y, bool> find(const X& x) {
+		std::pair<Y, bool>
+		find(const X& x) {
 			typename map<X, Y>::iterator it = X_to_Y.find(x);
 
 			if (it == X_to_Y.end()) {
@@ -69,7 +72,7 @@ class User {
 			}
 		}
 
-		const string get_name_from_key(key k) {
+		const string get_name_from_key(key k) const {
 			std::pair<string, bool> str_bool_pair;
 
 			str_bool_pair = names.find(k);
@@ -86,21 +89,28 @@ class User {
 		User(const string& fn, const string& ln):
 			first_name(add(fn)), last_name(add(ln)) {}
 
-		const string get_first_name() {
+		const string get_first_name() const {
 			return get_name_from_key(first_name);
 		}
 
-		const string get_last_name() {
+		const string get_last_name() const {
 			return get_name_from_key(last_name);
 		}
 
 		void print_keys() {
 			cout << first_name << " " << last_name << endl;
 		}
+
 };
 
 key User::seed = 0;
 mybimap<key, string> User::names{};
+
+ostream &operator<<(ostream &os, const User& user)
+{
+	os << user.get_first_name() << " " << user.get_last_name();
+	return os;
+}
 
 int main() 
 {
@@ -117,5 +127,7 @@ int main()
     cout << u3.get_first_name() << " " << u3.get_last_name() << endl;
     u3.print_keys();
 
+    // Operator overloading example.
+    cout << u1 << endl;
     return 0;
 }
