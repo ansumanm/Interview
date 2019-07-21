@@ -1,0 +1,5 @@
+Q> Flyweight pattern usage
+A> Space optimization
+
+Q> Use case
+A> Store data externally to avoid redundancy and reference when you need it.
