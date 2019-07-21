@@ -1,4 +1,4 @@
-all: ex1
+all: ex1 ex2
 
 ex1: ex1.cpp
 	@echo "[Building $@ ...]"
@@ -7,8 +7,16 @@ ex1: ex1.cpp
 	@./ex1
 	@echo "[Done ...]"
 
+ex2: ex2.cpp
+	@echo "[Building $@ ...]"
+	@g++ --std=c++1z $? -o $@
+	@echo "[Running $@ ...]"
+	@./$@
+	@echo "[Done ...]"
+
 clean:
 	@echo "[Deleting binaries ...]"
 	@rm -f ./ex1
+	@rm -f ./ex2
 	@echo "[Done ...]"
 	
