@@ -11,7 +11,7 @@ int counter;
 pthread_mutex_t lock; 
 pthread_mutex_t reader_ready_lock; 
 
-volatile int readers_waiting; // Protected data
+volatile int readers_waiting; // Shared protected data
 
 int sum_of_digits(long int t) {
 	long int remainder;
