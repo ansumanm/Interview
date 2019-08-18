@@ -8,7 +8,10 @@ uint32_t get_mask(int start, int end)
 	uint32_t mask_left;
 
 	mask_right = (-1 << start);
-	mask_left = (mask >> (32 - (end + 1)));
+	/* XXX For right shifts, if the shift is on a 
+	 * signed number, then the signed bit gets added.
+	 */
+	mask_left = (mask >> (31 - end ));
 	mask = mask_right & mask_left;
 
 	return mask;
